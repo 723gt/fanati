@@ -6,6 +6,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </head>
 
   <body>
@@ -27,7 +30,13 @@
 
         <div class="row">
           <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+            <form name="in_time">
             <select name="in_time">
+              <option value="08"> 08 </option>
+              <option value="09"> 09 </option>
+              <option value="10"> 10 </option>
+              <option value="11"> 11 </option> 
+              <option value="12"> 12 </option> 
               <option value="13"> 13 </option>
               <option value="14"> 14 </option>
               <option value="15"> 15 </option>
@@ -45,7 +54,9 @@
               <option value="03"> 03 </option>
               <option value="04"> 04 </option>
             </select>
-            < label> 時 </label>
+            </form>
+            <label> 時 </label>
+            <form name="in_min">
             <select name="in_min">
               <option value="00"> 00 </option>
               <option value="10"> 10 </option>
@@ -54,6 +65,7 @@
               <option value="40"> 40 </option>
               <option value="50"> 50 </option>
             </select>
+            </form>
             <label> 分 </label>
           </div>
         </div>
