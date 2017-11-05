@@ -25,7 +25,7 @@
         <div class="text-center">
           <!-- <div class="col-md-4 col-md-offset-4 col-sm-5 col-sm-offset-4"> -->
             <label>
-              お客さんの入店時間
+              プラン選択
             </label>
           <!-- </div> -->
         </div>
@@ -39,6 +39,7 @@
               <p><input type="checkbox" name="plan" value="time_plan" v-on:click="timeplan">時間プラン</p>
             </form>
               <div v-if="times">
+                <p> お客さんの入店時間</p>
               <form name="in_time">
                 <select name="in_time">
                   <option value="08"> 08 </option>
