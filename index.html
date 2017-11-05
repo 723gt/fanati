@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </head>
 
@@ -30,45 +31,53 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="time_plan">
           <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-            <form name="in_time">
-            <select name="in_time">
-              <option value="08"> 08 </option>
-              <option value="09"> 09 </option>
-              <option value="10"> 10 </option>
-              <option value="11"> 11 </option> 
-              <option value="12"> 12 </option> 
-              <option value="13"> 13 </option>
-              <option value="14"> 14 </option>
-              <option value="15"> 15 </option>
-              <option value="16"> 16 </option> 
-              <option value="17"> 17 </option> 
-              <option value="18"> 18 </option>
-              <option value="19"> 19 </option>
-              <option value="20"> 20 </option>
-              <option value="21"> 21 </option>
-              <option value="22"> 22 </option> 
-              <option value="23"> 23 </option>
-              <option value="00"> 00 </option>
-              <option value="01"> 01 </option>
-              <option value="02"> 02 </option> 
-              <option value="03"> 03 </option>
-              <option value="04"> 04 </option>
-            </select>
+            <form name="plan">
+              <p><input type="checkbox" name="plan" value="noon">昼のフリータイム</p>
+              <p><input type="checkbox" name="plan" value="evening">夕方のフリータイム</p>
+              <p><input type="checkbox" name="plan" value="night">夜のフリータイム</p>
+              <p><input type="checkbox" name="plan" value="time_plan" v-on:click="timeplan">時間プラン</p>
             </form>
-            <label> 時 </label>
-            <form name="in_min">
-            <select name="in_min">
-              <option value="00"> 00 </option>
-              <option value="10"> 10 </option>
-              <option value="20"> 20 </option>
-              <option value="30"> 30 </option>
-              <option value="40"> 40 </option>
-              <option value="50"> 50 </option>
-            </select>
-            </form>
-            <label> 分 </label>
+              <div v-if="times">
+              <form name="in_time">
+                <select name="in_time">
+                  <option value="08"> 08 </option>
+                  <option value="09"> 09 </option>
+                  <option value="10"> 10 </option>
+                  <option value="11"> 11 </option> 
+                  <option value="12"> 12 </option> 
+                  <option value="13"> 13 </option>
+                  <option value="14"> 14 </option>
+                  <option value="15"> 15 </option>
+                  <option value="16"> 16 </option> 
+                  <option value="17"> 17 </option> 
+                  <option value="18"> 18 </option>
+                  <option value="19"> 19 </option>
+                  <option value="20"> 20 </option>
+                  <option value="21"> 21 </option>
+                  <option value="22"> 22 </option> 
+                  <option value="23"> 23 </option>
+                  <option value="00"> 00 </option>
+                  <option value="01"> 01 </option>
+                  <option value="02"> 02 </option> 
+                  <option value="03"> 03 </option>
+                  <option value="04"> 04 </option>
+                </select>
+              </form>
+              <label> 時 </label>
+              <form name="in_min">
+                <select name="in_min">
+                  <option value="00"> 00 </option>
+                  <option value="10"> 10 </option>
+                  <option value="20"> 20 </option>
+                  <option value="30"> 30 </option>
+                  <option value="40"> 40 </option>
+                  <option value="50"> 50 </option>
+                </select>
+              </form>
+              <label> 分 </label>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -77,6 +86,7 @@
           </div>
         </div>
     </div>
+    <script type="text/javascript" src="js/vues.js"></script>
   </body>
 </html>
 
