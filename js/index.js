@@ -4,8 +4,6 @@ var plays_tmp = 0;
 var msg_tmp = "";
 function accounting()
 {
-  // var in_time = document.in_time.in_time.value;
-  // var in_min = document.in_min.in_min.value;
   for(var i = 0;i < document.plan.plan.length;i++){
     console.log("plan:" + document.plan.plan[i]);
     if(document.plan.plan[i].checked){
@@ -24,18 +22,21 @@ function accounting()
           msg_tmp += "夜のフリータイム\n";
           break;
         case 3:
+          var extension = Number(document.extension.extension.value);
+          plays_tmp += (500 * extension);
+          msg_tmp += `×${extension}回延長\n`
+          break;
+        case 4:
           var in_time = document.in_time.in_time.value;
           var in_min = document.in_min.in_min.value;
           in_time = Number(in_time);
           in_min = Number(in_min);
           checkTime(in_time,in_min);
+          break;
       }
     }
   }
   resultDisp();
-  // in_time = Number(in_time);
-  // in_min = Number(in_min);
-  // checkTime(in_time,in_min);
  }
 
 function checkTime(in_time,in_min)
@@ -45,7 +46,6 @@ function checkTime(in_time,in_min)
 
   if(time.getHours() < 13 && in_time >= 13)
   {
-    //now_time = time.getHours() - in_time; 
     console.log("FOO");
     var timet = time.getHours() + 24;
     now_time = timet - in_time;
@@ -96,7 +96,6 @@ function analysisPlan(now_time,now_min,in_time,in_min,time)
 
 function resultDisp(){
   var disp_msg = msg_tmp + "\n" + plays_tmp + "円";
-  //console.log(disp_msg);
   alert(disp_msg);
   location.reload();
 }
